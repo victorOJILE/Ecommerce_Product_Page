@@ -36,8 +36,8 @@ Users should be able to:
 
 ### Links
 
-[See solution](https://github.com/victorOJILE/Ecommerce-Product-Page)
-[Visit live site](https://victorojile.github.io/Ecommerce-Product-Page/)
+[See solution](https://github.com/victorOJILE/Ecommerce_Product_Page)
+[Visit live site](https://victorojile.github.io/Ecommerce_Product_Page/)
 
 ## My process
 
