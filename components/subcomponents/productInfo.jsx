@@ -2,36 +2,30 @@ import { AppContext } from "@/context";
 import { useState, useEffect, useMemo } from "react";
 
 export default function ProductInfo() {
-  let { data, setData } = AppContext();
-	let product = data.product;
-	const [cartInfo, setCartInfo] = useState(data.cart.find(e => e.pid == product.pid) || { quantity: 1 });
+  let { product, cart, setCart } = AppContext();
+	const [cartInfo, setCartInfo] = useState(cart.find(e => e.pid == product.pid) || { quantity: 1 });
 	
 	function handleChange(config) {
 		setCartInfo(config);
 	}
 
 	function addToCart() {
-		let productInCart = data.cart.findIndex(e => e.pid == product.pid);
+		let productInCart = cart.findIndex(e => e.pid == product.pid);
 		
 		if(productInCart == -1) {
-			setData(prev => ({
-				...prev,
-				cart: [...prev.cart, { ...cartInfo, ...product }]
-			}));
+			setCart(prev => [...prev, { ...cartInfo, ...product }]);
 		} else {
-			setData(prev => {
-				let cart = { ...prev.cart[productInCart], ...cartInfo };
-				prev.cart[productInCart] = cart;
+			setCart(prev => {
+				let cart = [...prev];
+				cart[productInCart] = { ...cartInfo, ...product };
 
-				return {
-					...prev
-				};
+				return cart;
 			});
 		}
 	}
 	
   useEffect(() => {
-		if(data.cart.findIndex(e => e.pid == product.pid) !== -1) addToCart();
+		if(cart.findIndex(e => e.pid == product.pid) !== -1) addToCart();
   }, [cartInfo]);
   
 	const nbf = useMemo(() => 

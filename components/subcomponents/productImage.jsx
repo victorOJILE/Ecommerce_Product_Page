@@ -26,8 +26,7 @@ export default function ProductImage() {
 
 function ImageComponent({ active, setActive, isLightBox, setIsLightBox }) {
   const [isMobile, setIsMobile] = useState(false);
-  let { data } = AppContext();
-  let product = data.product;
+  let { product } = AppContext();
 
   const activeProduct = product.imgUrls[active];
 

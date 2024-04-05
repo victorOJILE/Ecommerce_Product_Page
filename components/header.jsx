@@ -4,9 +4,10 @@ import { useState, useRef, useMemo } from 'react';
 export default function Header() {
 	const [openNav, setOpenNav] = useState(false);
 	const nav = useRef(null);
-	const prefersReducedMotion = window.matchMedia('prefers-reduced-motion').matches;
 
 	function handleClick() {
+		const prefersReducedMotion = window.matchMedia('prefers-reduced-motion').matches;
+		
 		if(window.innerWidth >= 768) return;
 		if(!openNav) {
 			setOpenNav(true);
@@ -77,20 +78,15 @@ export default function Header() {
 
 function CartDialog({ children }) {
 	const [openCart, setOpenCart] = useState(false);
-	let ctx = AppContext();
-	let cart = ctx.data.cart;
+	let { cart, setCart } = AppContext();
 
 	const nbf = useMemo(() => 
 		new Intl.NumberFormat('en-US', { style: "currency", currency: "USD" })
 	, []);
 
 	function removeProduct(e) {
-		let id = e.currentTarget.dataset.id;
-
-		ctx.setData(prev => ({
-			...prev,
-			cart: prev.cart.filter(product => product.pid != id)
-		}))
+		const id = e.currentTarget.dataset.id;
+		setCart(prev => prev.filter(product => product.pid != id));
 	}
 
 	return (
