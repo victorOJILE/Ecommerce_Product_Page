@@ -28,13 +28,16 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./public/desktop_view.png)
+![](./public/desktop_lightbox.png)
+![](./public/mobile_view.png)
+![](./public/mobile_cart_open.png)
 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/victorOJILE/Ecommerce-product-page)
-- Live Site URL: [Add live site URL here](https://victorojile.github.io/Ecommerce-product-page/)
+[See solution](https://github.com/victorOJILE/Ecommerce-Product-Page)
+[Visit live site](https://victorojile.github.io/Ecommerce-Product-Page/)
 
 ## My process
 
@@ -51,9 +54,9 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This was a great project for practicing responsive design and also got to work on cart product management using the react context API.
 
 ## Author
 
-- Website - [Ojile Victor](https://victorojile.github.io/portfolio/)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/victorOJILE)
+- Portfolio Website - [Ojile Victor](https://victorojile.github.io/portfolio/)
+- Frontend Mentor - [@victorOJILE](https://www.frontendmentor.io/profile/victorOJILE)
